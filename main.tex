@@ -1,0 +1,180 @@
+\documentclass[12pt]{void}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+%   List of Fonts
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[sc]{mathpazo}          % Palatino with smallcaps as text font
+\usepackage{eulervm}               % Euler math
+\usepackage[scaled=0.86]{berasans} % Bera for san serif family
+\usepackage[scaled=1]{inconsolata} % Inconsolata for fixed width
+\usepackage[T1]{fontenc}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   We use only those microtype features supported by both pdftex
+%   and dvips (cf. Table 1 on p.7 of the microtype documentation). 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[%
+	protrusion=true,
+	expansion=false,
+	auto=false
+	]{microtype}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Support for color and graphics through xcolor and graphicx
+%
+% Place any included graphics in a directory named "figures" 
+% in the same directory as LaTeX source file. To include the
+% the file "circle.eps", use the command
+%
+%  \includegraphics[]{circle.eps}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{{./figures/}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Other packages
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amssymb,amsfonts,amsthm}
+%\usepackage{amsmath}
+\usepackage[makeroom]{cancel}
+\usepackage{mathtools}
+%\usepackage{yfonts}
+%\usepackage{mathrsfs,pifont}
+\usepackage{pifont}% AO: removed mathrsfs as the script it uses clashes with the Euler math used here and replaced it with eucal
+\usepackage[mathscr]{eucal}
+\usepackage{slashed,mathabx} 
+\usepackage[bbgreekl]{mathbbol}
+\usepackage{tikz-cd}
+\usepackage{enumitem}
+\usepackage{quiver}
+\usepackage[all]{xy}
+\usepackage{mathrsfs}
+\usepackage{appendix}
+\usepackage{titletoc}
+\usepackage{lipsum}
+\usepackage{indentfirst} % do not suppress indents
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Load hyperref and amsrefs packages: these MUST be the last packages 
+%     loaded or problems are very likely to result so please keep
+%     them in this position.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\PassOptionsToPackage{hyphens}{url} 
+\usepackage[
+    setpagesize=false,
+    pagebackref,
+	pdfpagelabels=false,
+    pdfstartview={FitH 1000},
+    bookmarksnumbered=false,
+    linktocpage=true,
+    colorlinks=true,
+    anchorcolor=black,
+    menucolor=black,
+    runcolor=black,
+    filecolor=black,
+    linkcolor=linkblue,
+	citecolor=linkblue,
+	urlcolor=linkred,
+]{hyperref}%IM
+\usepackage[backrefs,msc-links,nobysame]{amsrefs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define colors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{linkred}{rgb}{0.7,0.2,0.2}
+\definecolor{linkblue}{rgb}{0,0.2,0.6}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   
+%   Define Theorem-like Environments
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{plain}
+\newtheorem{Proposition}[equation]{Proposition}
+\newtheorem{Lemma}[equation]{Lemma}
+\newtheorem{Corollary}[equation]{Corollary}
+\newtheorem{Theorem}[equation]{Theorem}
+\newtheorem{Fact}[equation]{Fact}
+
+
+\theoremstyle{definition}
+\newtheorem{Definition}[equation]{Definition}
+\newtheorem{Exercise}[equation]{Exercise}
+\newtheorem{Example}[equation]{Example}
+\newtheorem{Construction}[equation]{Construction}
+
+\theoremstyle{remark}
+\newtheorem{Remark}[equation]{Remark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\pagestyle{empty}
+\title{The Gutenberg Bible}
+\author{Bernie Sanders, Donald Trump}
+\date{September 15th, 2024}
+\maketitle
+\tableofcontents
+\cleardoublepage % Move to the next page
+
+ % Start chapters with Arabic numbering
+\mainmatter
+\pagenumbering{arabic}
+\pagestyle{plain} % Restore page numbers in the main matter
+
+\chapter*{Preface}
+
+\lipsum[39-50]
+
+\part{Preliminaries}
+
+\chapter{Six-Functor Formalism}
+
+\lipsum[3-19]
+
+\section{Sheaves on a Base}
+
+\lipsum[2-4]~\cite{EGA}
+
+\chapter{Homological Algebra}
+
+\section{Derived Functors}
+
+\lipsum[19-23]
+
+\section{Localization in Categories}
+
+\lipsum[1-3]
+
+\chapter{De Rham Cohomology}
+
+\lipsum[9-12]
+
+\section{Smooth Manifolds}
+
+\lipsum[21-23]
+
+\part{Appendix}
+
+\chapter{Waiting for Godot}
+
+\lipsum[18]
+
+\bibliographystyle{plain}
+\bibliography{ref}
+\end{document}
